@@ -1,5 +1,5 @@
 const t = require('tap')
-const ruSSML = require('../lib/polly-ru-ssml')
+const pollyRuSSML = require('../lib/polly-ru-ssml')
 const { ValidationError } = require('../lib/errors')
 
 /*-----------------------------------------------------------------------------
@@ -17,11 +17,11 @@ const { ValidationError } = require('../lib/errors')
 ]
 
 testData.forEach(texts => {
-    t.equal(ruSSML.ssml(texts[0]), texts[1])
+    t.equal(pollyRuSSML.ssml(texts[0]), texts[1])
 })
 
 testData.forEach(texts => {
-    t.equal(ruSSML.speak(texts[0]), `<speak>${texts[1]}</speak>`)
+    t.equal(pollyRuSSML.speak(texts[0]), `<speak>${texts[1]}</speak>`)
 })
 
 /*-----------------------------------------------------------------------------
@@ -38,7 +38,7 @@ const validConfigs = [
 
 validConfigs.forEach(options => {
     t.doesNotThrow(function() {
-        ruSSML.configure(options)
+        pollyRuSSML.configure(options)
     })
 })
 
@@ -51,6 +51,6 @@ const invalidConfigs = [
 
 invalidConfigs.forEach(options => {
     t.throws(function() {
-        ruSSML.configure(options)
+        pollyRuSSML.configure(options)
     }, ValidationError)
 })
