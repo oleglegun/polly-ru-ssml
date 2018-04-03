@@ -1,8 +1,16 @@
 # Polly Russian SSML Enhancer
 
+[![Build Status](https://travis-ci.org/oleglegun/polly-ru-ssml.svg?branch=master)](https://travis-ci.org/oleglegun/polly-ru-ssml)
+[![Coverage Status](https://coveralls.io/repos/github/oleglegun/polly-ru-ssml/badge.svg?branch=master)](https://coveralls.io/github/oleglegun/polly-ru-ssml?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Synopsis
 
 Convert russian text, that contains english words into a valid SSML for [AWS Polly TTS](https://aws.amazon.com/ru/polly/), thus enhancing synthesized audio pronunciation for english words within the russian language context.
+
+## Motivation
+
+By default, russian speakers in [AWS Polly TTS](https://aws.amazon.com/ru/polly/) service (Maxim, Tatiana) are not particularly good at pronouncing english words within the russian language context, so this library fixes it by explicitly wrapping each english word with `<lang xml:lang="en-US">word</lang>` tags.
 
 ## Installation
 
@@ -27,15 +35,6 @@ pollyRuSSML.speak("русский english")
 ### Configuration
 
 By default configuration is not necessary, but setting one can greatly improve intelligibility of english speech for russian users. Additionally, I found that the default volume for synthesized speech is quite low for using with Amazon Alexa assistant.
-
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| [country] | <code>string</code> | <code>&quot;us&quot;</code> | Country code for `<lang/>` tags. Valid values: `us`, `uk`. |
-| [rate] | <code>string</code> |  | Speech rate for latin characters. Valid values: `x-slow`, `slow`, `medium`, `fast`, `x-fast`. |
-| [globalVolume] | <code>string</code> |  | Global audio volume. Valid values: `x-soft`, `soft`, `medium`, `loud`, `x-loud`. |
-| [volume] | <code>string</code> |  | Local audio volume for latin characters. Valid values: `x-soft`, `soft`, `medium`, `loud`, `x-loud`. |
-
-[API documentation](./API.md)
 
 ```js
 const pollyRuSSML = require('polly-ru-ssml')
@@ -83,9 +82,15 @@ pollyRuSSML.speak('русский english', {
  */
 ```
 
-## Motivation
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| [country] | <code>string</code> | <code>&quot;us&quot;</code> | Country code for `<lang/>` tags. Valid values: `us`, `uk`. |
+| [rate] | <code>string</code> |  | Speech rate for latin characters. Valid values: `x-slow`, `slow`, `medium`, `fast`, `x-fast`. |
+| [globalVolume] | <code>string</code> |  | Global audio volume. Valid values: `x-soft`, `soft`, `medium`, `loud`, `x-loud`. |
+| [volume] | <code>string</code> |  | Local audio volume for latin characters. Valid values: `x-soft`, `soft`, `medium`, `loud`, `x-loud`. |
 
-By default, russian speakers in [AWS Polly TTS](https://aws.amazon.com/ru/polly/) service (Maxim, Tatiana) are not particularly good at pronouncing english words within the russian language context, so this library fixes it by explicitly wrapping each english word with `<lang xml:lang="en-US">word</lang>` tags.
+[API documentation](./API.md)
+
 
 ## Tests
 
