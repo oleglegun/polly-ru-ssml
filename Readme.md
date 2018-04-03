@@ -99,7 +99,10 @@ Any contributions are very welcome.
 
 MIT.
 
-## Change History
+## Changelog
+
+### [0.1.3] - 2018-04-03
+- Add API reference.
 
 ### [0.1.2] - 2018-04-03
 - Add Readme.
