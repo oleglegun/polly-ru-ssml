@@ -54,5 +54,3 @@ invalidConfigs.forEach(options => {
         ruSSML.configure(options)
     }, ValidationError)
 })
-
-const p = require('../index')
