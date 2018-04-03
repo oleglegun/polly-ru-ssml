@@ -1,0 +1,28 @@
+{
+  "name": "polly-ru-ssml",
+  "version": "0.1.0",
+  "description": "Convert russian text, that contains english words into a valid SSML for AWS Polly TTS. Enhances synthesized audio for russian language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oleglegun/polly-ru-ssml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oleglegun/polly-ru-ssml/issues"
+  },
+  "keywords": [
+    "aws",
+    "amazon",
+    "polly",
+    "ssml"
+  ],
+  "author": "Oleg Legun <oleg.legun@gmail.com>",
+  "homepage": "https://github.com/oleglegun/polly-ru-ssml#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "^11.1.3"
+  }
+}
