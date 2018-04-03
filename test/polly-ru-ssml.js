@@ -28,6 +28,14 @@ testData.forEach(texts => {
  *  Configuration validation tests
  *----------------------------------------------------------------------------*/
 
+t.throws(function() {
+    pollyRuSSML.configure()
+})
+
+t.throws(function() {
+    pollyRuSSML.configure("")
+})
+
 const validConfigs = [
     {},
     { volume: 'loud' },
@@ -42,6 +50,12 @@ validConfigs.forEach(options => {
     })
 })
 
+validConfigs.forEach(options => {
+    t.doesNotThrow(function() {
+        pollyRuSSML.speak("", options)
+    })
+})
+
 const invalidConfigs = [
     { country: 'ru' },
     { volume: 'lou' },
@@ -52,5 +66,11 @@ const invalidConfigs = [
 invalidConfigs.forEach(options => {
     t.throws(function() {
         pollyRuSSML.configure(options)
+    }, ValidationError)
+})
+
+invalidConfigs.forEach(options => {
+    t.throws(function() {
+        pollyRuSSML.speak("", options)
     }, ValidationError)
 })

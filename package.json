@@ -1,6 +1,6 @@
 {
     "name": "polly-ru-ssml",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Convert russian text, that contains english words into a valid SSML for AWS Polly TTS, thus enhancing synthesized audio pronunciation for english words within the russian language context.",
     "main": "index.js",
     "scripts": {
