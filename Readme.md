@@ -107,6 +107,9 @@ MIT.
 ## Changelog
 
 ### [0.1.3] - 2018-04-03
+- Add more tests.
+
+### [0.1.3] - 2018-04-03
 - Add API reference.
 
 ### [0.1.2] - 2018-04-03
