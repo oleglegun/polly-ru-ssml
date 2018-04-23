@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/oleglegun/polly-ru-ssml.svg?branch=master)](https://travis-ci.org/oleglegun/polly-ru-ssml)
 [![Coverage Status](https://coveralls.io/repos/github/oleglegun/polly-ru-ssml/badge.svg?branch=master)](https://coveralls.io/github/oleglegun/polly-ru-ssml?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Synopsis
 
@@ -63,7 +64,7 @@ pollyRuSSML.speak('русский english')
  * </speak>
  */
 
-// 2. Local configuration only for current usage (overrides global configuration)
+// 2. Local configuration only for the current usage (overrides global configuration)
 pollyRuSSML.speak('русский english', {
     globalVolume: 'x-loud',
     rate: 'x-slow',
@@ -106,7 +107,10 @@ MIT.
 
 ## Changelog
 
-### [0.1.3] - 2018-04-03
+### [0.1.5] - 2018-04-23
+- Hide private methods from user API.
+
+### [0.1.4] - 2018-04-03
 - Add more tests.
 
 ### [0.1.3] - 2018-04-03

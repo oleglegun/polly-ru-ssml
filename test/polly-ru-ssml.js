@@ -6,7 +6,7 @@ const { ValidationError } = require('../lib/errors')
  *  SSML generation tests
  *----------------------------------------------------------------------------*/
 
- const testData = [
+const testData = [
     ['123', '123'],
     [' eng ', ' <lang xml:lang="en-US">eng </lang>'],
     ['ENG', '<lang xml:lang="en-US">ENG</lang>'],
@@ -30,11 +30,11 @@ testData.forEach(texts => {
 
 t.throws(function() {
     pollyRuSSML.configure()
-})
+}, ValidationError)
 
 t.throws(function() {
-    pollyRuSSML.configure("")
-})
+    pollyRuSSML.configure('')
+}, ValidationError)
 
 const validConfigs = [
     {},
@@ -52,7 +52,7 @@ validConfigs.forEach(options => {
 
 validConfigs.forEach(options => {
     t.doesNotThrow(function() {
-        pollyRuSSML.speak("", options)
+        pollyRuSSML.speak('', options)
     })
 })
 
@@ -71,6 +71,6 @@ invalidConfigs.forEach(options => {
 
 invalidConfigs.forEach(options => {
     t.throws(function() {
-        pollyRuSSML.speak("", options)
+        pollyRuSSML.speak('', options)
     }, ValidationError)
 })
